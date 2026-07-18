@@ -1,0 +1,37 @@
+{
+  "name": "motion-xray-mvp",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "generate:fixtures": "node --import tsx scripts/generateFixtures.ts",
+    "lint:claims": "node --import tsx scripts/claimsLint.ts"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.2.6",
+    "@fontsource/ibm-plex-sans": "^5.2.6",
+    "@fontsource/newsreader": "^5.2.8",
+    "@mediapipe/tasks-vision": "^0.10.17",
+    "@react-three/drei": "^10.4.4",
+    "@react-three/fiber": "^9.2.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "three": "^0.178.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.178.0",
+    "@vitejs/plugin-react": "^6.0.3",
+    "tsx": "^4.20.3",
+    "typescript": "~5.8.3",
+    "vite": "^8.1.1",
+    "vitest": "^3.2.4"
+  }
+}

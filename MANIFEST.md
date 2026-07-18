@@ -1,0 +1,82 @@
+# Manifest
+
+## Key Files
+
+- `CURSOR_LIVE_BUILD_BRIEF.md` — Live MediaPipe pipeline implementation brief
+- `CURSOR_BUILD_BRIEF.md` — Original fixture MVP implementation brief
+- `CURSOR_REVIEW_1.md` — Focused correction-pass brief (batch 1)
+- `CURSOR_LIVE_REVIEW_1.md` — Live runtime correction brief (graph clock, missing pose)
+- `CURSOR_LIVE_REVIEW_2.md` — Real-video event / graph-clock correction brief (batch 2)
+- `CURSOR_LIVE_REVIEW_3.md` — Inspectability / Measurement receipt evidence brief (batch 3)
+- `CURSOR_LIVE_REVIEW_4.md` — Local-maxima heel-low detector correction brief (batch 4)
+- `CURSOR_LIVE_REVIEW_5.md` — Receipt JSON download blob-URL lifecycle fix brief (batch 5)
+- `CURSOR_LIVE_REVIEW_6.md` — Stronger download cleanup delay after headed Chromium failure (batch 6)
+- `CURSOR_LIVE_REVIEW_7.md` — One-click real-video judge path brief (batch 7)
+- `RESEARCH_OPEN_SOURCE_STACK.md` — MediaPipe / Sports2D stack decision
+- `FABLE_SPEC.md` — Frozen manager-reviewed product specification
+- `FABLE_INPUT.md` — Planning input that produced the Fable spec
+- `README.md` — Product boundary, run/test commands, limitations
+- `BUILD_RECEIPT.md` — Implementation receipt with observed commands/results
+- `BROWSER_PROOF.md` — Headed-browser positive, negative and source-reset evidence
+- `SUBMISSION_PACKET.md` — Paste-ready London submission fields and claim ceiling
+- `RECORDING_SCRIPT.md` — Timed ≤90-second no-slides demo script
+- `package.json` — Scripts and dependencies (`@mediapipe/tasks-vision`)
+- `public/models/pose_landmarker_full.task` — Local Pose Landmarker full model
+- `public/mediapipe/wasm/` — Local SIMD + non-SIMD WASM assets
+- `public/demo/mixkit-full-body-walk.mp4` — Licensed Mixkit same-origin real-video proof clip
+- `public/demo/ATTRIBUTION.md` — Mixkit source + Stock Video Free License attribution
+- `vite.config.ts` — Vite app config
+- `vitest.config.ts` — Vitest config
+- `scripts/generateFixtures.ts` — Seeded typed fixture generator
+- `scripts/claimsLint.ts` — Context-aware claims linter
+- `src/main.tsx` — App entry
+- `src/styles.css` — Observation-chamber tokens and responsive layout
+- `src/copy/copy.ts` — Centralized user-facing copy
+- `src/app/App.tsx` — Page composition, capture orchestration, wiring
+- `src/app/appState.ts` — Immutable reducer including capture phases
+- `src/app/useReplayClock.ts` — Single replay clock
+- `src/fixtures/schema.ts` — Fixture/receipt types + validation (world landmarks, reason codes)
+- `src/fixtures/loader.ts` — Bundled fixture loader
+- `src/fixtures/accepted-walk.json` — Golden-path synthetic gait
+- `src/fixtures/insufficient-evidence.json` — Poor-capture abstention fixture
+- `src/metrics/stepEvents.ts` — Body-relative heel-low event estimate (percentile local maxima)
+- `src/metrics/timing.ts` — Same-side intervals / median / IQR / delta
+- `src/metrics/quality.ts` — Capture-protocol quality gates + reason codes + evidence partitions
+- `src/metrics/kneeFlexion.ts` — Camera-plane knee flexion range
+- `src/metrics/receipt.ts` — Receipt compute + display formatting
+- `src/metrics/publicReceipt.ts` — Public download export (no frames/landmarks/media)
+- `src/metrics/fork.ts` — Illustrative ghost phase offset + fork display model
+- `src/metrics/mirror.ts` — Semantic left/right mirror transform
+- `src/scene/*` — R3F stage preferring world landmarks when present
+- `src/ui/*` — Hero, lens, body diff, Measurement receipt, overlay, provenance, capture picker
+- `src/ui/MeasurementReceipt.tsx` — Capture evidence disclosure + receipt JSON download
+- `src/app/motionXrayDebug.ts` — DEV-only `window.__MOTION_XRAY_DEBUG__` seam
+- `src/live/modelProvenance.ts` — MediaPipe package/model identity + SHA-256
+- `src/live/poseEngine.ts` — Local FilesetResolver + PoseLandmarker wrapper
+- `src/live/inferenceClock.ts` — Strictly increasing MediaPipe graph clock (delta-preserving after media reset)
+- `src/live/cameraCapture.ts` — Camera countdown/record session
+- `src/live/fileCapture.ts` — Local video analysis session
+- `src/live/demoVideoProof.ts` — Same-origin demo MP4 → browser File loader
+- `src/live/buildFixture.ts` — Captured-frame fixture builder (no pixels)
+- `src/live/mediapipeAdapter.ts` — Lazy live entry + exports
+- `src/live/motionSource.ts` — Live status / source interface
+- `src/live/captureConstants.ts` — Capture protocol constants
+- `tests/*.test.ts` — Verification suite including adversarial + pose seams
+- `tests/demoVideoProof.test.ts` — Demo asset loader success/fail/no-fixture contract
+- `browser-proof/` — Fixture and real-video browser proof screenshots
+
+## Recent Changes
+
+- 2026-07-18: Visible Codex in-app browser verified the full judge path — one-click real-video inference, accepted 3D receipt, evidence disclosure and explicit poor-capture refusal
+- 2026-07-18: CURSOR_LIVE_REVIEW_7 — one-click real-video proof path; bundled Mixkit MP4; demoted synthetic replay; loader tests; attribution/docs
+- 2026-07-18: CURSOR_LIVE_REVIEW_6 — keep download anchor + blob URL for 1000 ms after click; stronger lifecycle ordering test; docs record review-5 headed failure pending manager rerun
+- 2026-07-18: CURSOR_LIVE_REVIEW_5 — defer blob URL revoke after receipt download click; lifecycle unit test; honest browser-proof caveat until manager rerun
+- 2026-07-18: CURSOR_LIVE_REVIEW_4 — replace global low-band entry crossing with 60th-percentile local-maxima heel-low detection; amplitude-drift + extrema regressions; research/build docs
+- 2026-07-18: CURSOR_LIVE_REVIEW_3 — Measurement receipt evidence fields, public JSON download, DEV debug seam, inspectability docs/tests
+- 2026-07-18: CURSOR_LIVE_REVIEW_2 — body-relative visibility-aware heel signal, sparse-placeholder + global-pan regressions, graph clock preserves within-source media deltas after reset
+- 2026-07-18: CURSOR_LIVE_REVIEW_1 — graph/media clock split, missing-pose placeholders, loadeddata wait, no double getUserMedia, terminal camera errors, 2s framing, material-frame-gaps reason + tests
+- 2026-07-18: Live MediaPipe pipeline — real local pose engine, camera/file capture, overlay, stronger quality gates, knee flexion, provenance breakthroughs; 32 tests + claims lint + production build green
+- 2026-07-18: Final real-browser verification of fixture path — accepted/fork/abstention/handoff states
+- 2026-07-18: Final surgical review — GhostFork `LineSegments`, EvidenceLegend sticky, live probe race guard
+- 2026-07-18: CURSOR_REVIEW_1 correction pass — heel-low proxy, clean display rig, claims lint, picker return-phase
+- 2026-07-18: Created complete Motion X-Ray MVP (Vite/React/R3F), fixtures, metrics, UI, tests, docs
