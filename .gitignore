@@ -12,6 +12,18 @@ dist
 dist-ssr
 *.local
 
+# Local build process, evidence captures, and release working notes
+browser-proof/
+BROWSER_PROOF.md
+BUILD_RECEIPT.md
+CURSOR_*.md
+FABLE_*.md
+MANIFEST.md
+RECORDING_SCRIPT.md
+RESEARCH_OPEN_SOURCE_STACK.md
+SUBMISSION_PACKET.md
+motion-xray-demo-video/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
