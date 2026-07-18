@@ -24,7 +24,7 @@ Motion X-Ray
 
 **Project description**
 
-Motion X-Ray turns 12 seconds of walking video into a local, replayable 3D landmark model and an inspectable motion receipt. It reports camera-relative timing and knee estimates only when the capture passes explicit evidence gates—and visibly refuses to invent measurements when it does not.
+Motion X-Ray turns 12 seconds of walking video into a local 3D evidence replay and a printable, CMAS-informed observation report. It exposes capture quality and uncertainty, then visibly refuses to invent measurements when the evidence fails.
 
 **Public GitHub repository**
 
@@ -52,7 +52,7 @@ PENDING — add at least one Twitter/X or LinkedIn profile.
 
 ## One-line judge pitch
 
-Your body just opened a pull request: 12 seconds of video become an inspectable 3D motion receipt, with evidence gates that refuse to manufacture certainty.
+Your body just opened a pull request: 12 seconds of video become an inspectable 3D motion receipt and professional handoff, with evidence gates that refuse to manufacture certainty.
 
 ## Codex leverage line
 

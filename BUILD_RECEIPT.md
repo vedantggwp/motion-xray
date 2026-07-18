@@ -5,13 +5,55 @@ Date: 2026-07-18
 Implementation model: **Cursor Grok 4.5 High Fast**
 
 Workspace: `workstreams/motion-xray-mvp` only
-Brief: `CURSOR_LIVE_REVIEW_7.md`
+Brief: `CURSOR_LIVE_REVIEW_8.md`
 
 ## Story chain
 
-`research -> open-source stack decision -> Fable spec -> fixture MVP -> live MediaPipe pipeline -> live review 1/2/3/4/5/6 -> one-click real-video proof path (this) -> tests -> claims lint -> production build -> residual limitations`
+`research -> open-source stack decision -> Fable spec -> fixture MVP -> live MediaPipe pipeline -> live review 1/2/3/4/5/6/7 -> clinician-readable Motion Observation Report (this) -> tests -> claims lint -> production build -> residual limitations`
 
-## This pass — one-click real-video proof path
+## This pass — clinician-readable Motion Observation Report
+
+Replaces the handoff drawer outcome with a printable one-page **Motion Observation Report**. Structure is CMAS-informed for patient-generated observation handoff only — unavailable history/condition/sign-off/normative fields are shown as `not collected` / `not confirmed` / `not performed` / `not available`. `HandoffDrawer` now takes the live `MotionReceipt`; `buildHandoffViewModel` maps every dynamic token from receipt/display fields. Print uses `window.print()` with CSS that hides app chrome/backdrop/actions.
+
+| Area | Change |
+|---|---|
+| Copy | Report title, CMAS-informed badge + disclaimer, section/field labels, print action |
+| UI | Warm report card: capture record, observed measures, evidence/artefacts, interpretation boundary, questions, method/provenance |
+| Wiring | `App.tsx` passes `receipt` into `HandoffDrawer` (no hard-coded metrics) |
+| Print | `@media print` shows report only; hides `.handoff-no-print` / actions |
+| Tests | Expanded handoff mapping for all dynamic fields + print/forbidden-claim source assertions |
+| Docs | This receipt + `MANIFEST.md` only (`README` / `SUBMISSION_PACKET` / `RECORDING_SCRIPT` left to manager) |
+
+### Commands actually run (Motion Observation Report pass)
+
+| Command | Result |
+|---|---|
+| `npm test` | **21 files / 61 tests passed** |
+| `npm run lint:claims` | Seeded examples passed; scanned **160** centralized copy strings |
+| `npm run build` | **TypeScript + Vite production build succeeded** (`dist/`) |
+
+Observed test output (2026-07-18, Motion Observation Report pass):
+
+```
+Test Files  21 passed (21)
+      Tests  61 passed (61)
+```
+
+Observed claims lint:
+
+```
+claimsLint: all seeded examples passed; scanned 160 centralized copy strings
+```
+
+### Claims not made
+
+- No CMAS approval, compliance, certification, or lab accreditation
+- No FHIR conformance
+- No clinical gait-lab report, medical device, diagnosis, or normative comparison
+- No measurement algorithm / gate / hero / real-video proof / poor-capture changes
+- No new dependency, network call, storage, or patient identity fields
+
+## Prior pass — one-click real-video proof path
 
 In-app browser camera/file-chooser automation stalls, so judges need a reliable one-click **real inference** path for a ≤90s screen recording. This pass bundles a licensed Mixkit full-body walk under `public/demo/`, fetches it same-origin into a browser `File`, and runs the exact existing `handleFile` → `FileCaptureSession` → MediaPipe → deterministic receipt pipeline. No precomputed landmarks or hard-coded receipt values. Measurement gates unchanged.
 

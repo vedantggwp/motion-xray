@@ -12,7 +12,9 @@
 - `CURSOR_LIVE_REVIEW_5.md` — Receipt JSON download blob-URL lifecycle fix brief (batch 5)
 - `CURSOR_LIVE_REVIEW_6.md` — Stronger download cleanup delay after headed Chromium failure (batch 6)
 - `CURSOR_LIVE_REVIEW_7.md` — One-click real-video judge path brief (batch 7)
+- `CURSOR_LIVE_REVIEW_8.md` — Clinician-readable Motion Observation Report brief (batch 8)
 - `RESEARCH_OPEN_SOURCE_STACK.md` — MediaPipe / Sports2D stack decision
+- `CLINICAL_REPORTING_BASIS.md` — Primary-source basis and claim ceiling for the Motion Observation Report
 - `FABLE_SPEC.md` — Frozen manager-reviewed product specification
 - `FABLE_INPUT.md` — Planning input that produced the Fable spec
 - `README.md` — Product boundary, run/test commands, limitations
@@ -48,7 +50,8 @@
 - `src/metrics/fork.ts` — Illustrative ghost phase offset + fork display model
 - `src/metrics/mirror.ts` — Semantic left/right mirror transform
 - `src/scene/*` — R3F stage preferring world landmarks when present
-- `src/ui/*` — Hero, lens, body diff, Measurement receipt, overlay, provenance, capture picker
+- `src/ui/*` — Hero, lens, body diff, Measurement receipt, overlay, provenance, capture picker, report handoff
+- `src/ui/HandoffDrawer.tsx` — Printable Motion Observation Report from live `MotionReceipt`
 - `src/ui/MeasurementReceipt.tsx` — Capture evidence disclosure + receipt JSON download
 - `src/app/motionXrayDebug.ts` — DEV-only `window.__MOTION_XRAY_DEBUG__` seam
 - `src/live/modelProvenance.ts` — MediaPipe package/model identity + SHA-256
@@ -64,9 +67,11 @@
 - `tests/*.test.ts` — Verification suite including adversarial + pose seams
 - `tests/demoVideoProof.test.ts` — Demo asset loader success/fail/no-fixture contract
 - `browser-proof/` — Fixture and real-video browser proof screenshots
+- `browser-proof/motion-observation-report.png` — Visible in-app browser proof of the real-video report outcome
 
 ## Recent Changes
 
+- 2026-07-18: CURSOR_LIVE_REVIEW_8 — printable Motion Observation Report handoff; receipt-driven view model; print CSS; mapping + claims-boundary tests; BUILD_RECEIPT
 - 2026-07-18: Visible Codex in-app browser verified the full judge path — one-click real-video inference, accepted 3D receipt, evidence disclosure and explicit poor-capture refusal
 - 2026-07-18: CURSOR_LIVE_REVIEW_7 — one-click real-video proof path; bundled Mixkit MP4; demoted synthetic replay; loader tests; attribution/docs
 - 2026-07-18: CURSOR_LIVE_REVIEW_6 — keep download anchor + blob URL for 1000 ms after click; stronger lifecycle ordering test; docs record review-5 headed failure pending manager rerun

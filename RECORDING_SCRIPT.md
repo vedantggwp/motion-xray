@@ -13,43 +13,43 @@ No slides. Record the working product in the Codex in-app browser. Keep the poin
 
 ## Spoken script and actions
 
-### 0–7 s — cold open
+### 0 to 7 seconds: cold open
 
 Action: hold on the landing view and 3D figure.
 
 > What if your body could open a pull request? This is Motion X-Ray, built today with Codex.
 
-### 7–17 s — real source
+### 7 to 17 seconds: real source
 
 Action: click **Run real video proof**.
 
 > It takes a real twelve-second walking video, runs MediaPipe locally in the browser, and turns thirty-three estimated landmarks per frame into a replayable motion model. The video is never uploaded.
 
-### 17–32 s — watch inference
+### 17 to 32 seconds: watch inference
 
 Action: let the real video and pose overlay run. Point briefly to the skeleton and progress state.
 
 > Codex assembled the capture protocol, bundled model and WebAssembly runtime, temporal event detector, evidence gates, and the 3D interface—then tested the system against good and deliberately bad footage.
 
-### 32–53 s — receipt resolves
+### 32 to 49 seconds: receipt resolves
 
 Action: when the 3D result appears, point to left/right intervals, event ribbon and knee estimates.
 
 > This is not a diagnosis or an X-ray. It is an inspectable motion receipt: camera-relative timing, variation and knee estimates, all calculated deterministically from the captured landmarks.
 
-### 53–68 s — prove it is not AI slop
+### 49 to 68 seconds: show the professional outcome
 
-Action: open **Measurement receipt**.
+Action: click **Open motion observation report**.
 
-> Every result carries its proof: sampled frames, pose presence, foot visibility, accepted and rejected events, regularity, model identity and the exact model checksum. No hidden language model invents these numbers.
+> The outcome is a printable Motion Observation Report. Its structure is informed by clinical movement-analysis reporting, but it does not pretend to be a clinical report. It carries the capture conditions, quality, observed measures, missing context, method and questions a professional can actually assess.
 
-### 68–78 s — show refusal
+### 68 to 79 seconds: show refusal
 
-Action: click **View the poor-capture demo**.
+Action: close the report, then click **View the poor-capture demo**.
 
 > And when the evidence is weak, it refuses to report timing at all. The safest number is sometimes no number.
 
-### 78–90 s — Codex close
+### 79 to 90 seconds: Codex close
 
 Action: return pointer to the provenance line or product name.
 

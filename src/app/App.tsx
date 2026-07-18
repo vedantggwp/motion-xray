@@ -763,10 +763,10 @@ export default function App() {
         onClose={handleCloseSources}
       />
 
-      {display && (
+      {receipt && (
         <HandoffDrawer
           open={state.handoffOpen}
-          display={display}
+          receipt={receipt}
           onClose={() => dispatch({ type: 'CLOSE_HANDOFF' })}
         />
       )}
