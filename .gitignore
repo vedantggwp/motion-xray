@@ -34,3 +34,4 @@ motion-xray-demo-video/
 *.njsproj
 *.sln
 *.sw?
+.vercel

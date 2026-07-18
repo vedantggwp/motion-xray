@@ -12,6 +12,10 @@
 </p>
 
 <p align="center">
+  <a href="https://motion-xray.vercel.app"><strong>Open the live demo</strong></a>
+</p>
+
+<p align="center">
   <img alt="61 tests passing" src="https://img.shields.io/badge/tests-61%20passing-38c7a5" />
   <img alt="local inference" src="https://img.shields.io/badge/inference-local-63d9f5" />
   <img alt="no backend" src="https://img.shields.io/badge/backend-none-8792a2" />
